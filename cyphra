@@ -1,13 +1,9 @@
 local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 
-local FREE_KEY = "LSHD_78a7148d5668c847bb0f124c"
-
-pcall(setclipboard, FREE_KEY)
-
 local Window = Rayfield:CreateWindow({
-    Name = "Cyphra Hub",
-    LoadingTitle = "Key copied to clipboard!",
-    LoadingSubtitle = "Paste it below",
+    Name = "Cyphra Hub - key",
+    LoadingTitle = "welcome",
+    LoadingSubtitle = "copy the key in discord",
     ConfigurationSaving = { Enabled = true, FolderName = "CyphraHub", FileName = "Key" },
     KeySystem = false,
 })
