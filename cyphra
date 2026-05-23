@@ -1,5 +1,7 @@
 local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 
+local FREE_KEY = "LSHD_78a7148d5668c847bb0f124c"
+
 local Window = Rayfield:CreateWindow({
     Name = "Cyphra Hub - key",
     LoadingTitle = "welcome",
