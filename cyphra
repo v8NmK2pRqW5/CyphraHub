@@ -1,0 +1,48 @@
+setclipboard("https://discord.gg/DfaaB3cd8B")
+
+local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
+
+local FREE_KEY = "LSHD_78a7148d5668c847bb0f124c"
+
+local Window = Rayfield:CreateWindow({
+    Name = "Cyphra Hub - key",
+    LoadingTitle = "welcome",
+    LoadingSubtitle = "copy the key in discord",
+    ConfigurationSaving = { Enabled = true, FolderName = "CyphraHub", FileName = "Key" },
+    KeySystem = false,
+})
+
+local MainTab = Window:CreateTab("Access", 4483362458)
+local userKey = ""
+
+MainTab:CreateSection("Paste Your Key")
+MainTab:CreateInput({
+    Name = "Key",
+    PlaceholderText = "Paste key (Ctrl+V)...",
+    RemoveTextAfterFocusLost = false,
+    Flag = "UserKey",
+    Callback = function(text) userKey = text end,
+})
+
+MainTab:CreateButton({
+    Name = "continue",
+    Callback = function()
+        if userKey == "" then
+            Rayfield:Notify({ Title = "Error", Content = "Paste the key first", Duration = 3 })
+            return
+        end
+        getgenv().CyphraKey = userKey
+        getgenv().CyphraHubLoaded = true
+        Rayfield:Notify({ Title = "Success", Content = "Loading hub...", Duration = 2, Image = 4483362458 })
+        task.wait(1)
+        Rayfield:Destroy()
+        loadstring(game:HttpGet("https://lua.ad/s/86b8b086?key=" .. userKey))()
+    end,
+})
+
+Rayfield:Notify({
+    Title = "Key Copied!",
+    Content = "Paste it in the field (Ctrl+V)",
+    Duration = 5,
+    Image = 4483362458,
+})
